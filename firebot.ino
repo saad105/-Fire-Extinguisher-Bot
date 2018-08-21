@@ -1,8 +1,7 @@
-#define m11 12 //Dc motor
-#define m12 11 //DC motor
-#define m21 10 //DC motor
-#define m21 1  //DC motor
-#define m22 9  //DC motor
+#define m11 12 //Dc motor1
+#define m12 11 //DC motor1
+#define m21 10 //DC motor2
+#define m22 9  //DC motor2
 #define m31 6  //DC pump motor
 #define m32 7  //Dc pump motor
 
