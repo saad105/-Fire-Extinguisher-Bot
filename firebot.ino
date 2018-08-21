@@ -1,4 +1,4 @@
-#de ine m11 12
+#define m11 12
 #define m12 11
 #define m21 10
 #define m22 9
