@@ -1,18 +1,19 @@
-#define m11 12
-#define m12 11
-#define m21 10
-#define m22 9
-#define m31 6
-#define m32 7
+#define m11 12 //Dc motor
+#define m12 11 //DC motor
+#define m21 10 //DC motor
+#define m21 1  //DC motor
+#define m22 9  //DC motor
+#define m31 6  //DC pump motor
+#define m32 7  //Dc pump motor
 
 int Buzzer = 13;
 int FlamePin1 = 2;
 int FlamePin2 = 3;
 int FlamePin3 = 4;
-int Flame1= LOW;// when fire is exposed
-int Flame2= LOW;// when fire is exposed
-int Flame3= LOW;// when fire is exposed
-// when fire is exposed
+int Flame1= LOW;// when fire is detected the flame sensor gives the value as high
+int Flame2= LOW;
+int Flame3= LOW;
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(Buzzer,OUTPUT);
@@ -23,7 +24,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
    Flame1=digitalRead(FlamePin1);
    Flame2=digitalRead(FlamePin2);
    Flame3=digitalRead(FlamePin3);
@@ -49,7 +49,7 @@ void loop() {
       digitalWrite(m22,LOW);
   
    }
-    else if (Flame3== HIGH) { //left right
+    else if (Flame3== HIGH) { //right logic
     digitalWrite(Buzzer,HIGH);
     Serial.println("HIGH FLAME");
     digitalWrite(m31,LOW);
@@ -65,7 +65,7 @@ void loop() {
       digitalWrite(m22,LOW);
    }
       
-   else 
+   else    //stop
    {
       digitalWrite(Buzzer,LOW);
       digitalWrite(m31,LOW);
